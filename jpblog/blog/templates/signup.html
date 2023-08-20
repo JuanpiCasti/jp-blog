@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}
+Sign Up
+{% endblock %}
+
+{% block content %}
+
+<h1 class="title is-1">Sign Up</h1>
+
+<form class="box" method="POST">
+    {% csrf_token %}
+    {% if error %}
+    <div class="notification is-danger">
+        {{error}}.
+    </div>
+    {% endif %}
+    <div class="field">
+        <img class="rounded-circle"
+            src="https://img.freepik.com/vector-premium/hombre-sostiene-globo-su-mano-lo-senala-dedo-concepto-educacion-maestro-conquista-mundial-ecologia-ilustracion-plana-vectorial_531064-4168.jpg?w=2000"
+            alt="" width="72" height="72">
+
+        <label for="id_username" class="label mt-4">Username</label>
+        <div class="control">
+            {{form.username}}
+        </div>
+
+        <label for="id_email" class="label mt-4">Email</label>
+        <div class="control">
+            {{form.email}}
+        </div>
+
+        <label for="id_first_name" class="label mt-4">First Name</label>
+        <div class="control">
+            {{form.first_name}}
+        </div>
+
+        <label for="id_last_name" class="label mt-4">last Name</label>
+        <div class="control">
+            {{form.last_name}}
+        </div>
+
+        <label for="id_password1" class="label mt-4">Password</label>
+        <div class="control">
+            {{form.password1}}
+        </div>
+
+        <label for="id_password2" class="label mt-4">Confirm password</label>
+        <div class="control">
+            {{form.password2}}
+        </div>
+
+        <div class="control mt-4">
+            <input type="submit" class="button is-link" />
+        </div>
+    </div>
+</form>
+
+
+<!-- <form class="box" method="POST" action="register/">
+    {% csrf_token %}
+    <div class="{{errorclass}}" role="alert">{{error}}</div>
+    <div class="field">
+        <img class="rounded-circle"
+            src="https://img.freepik.com/vector-premium/hombre-sostiene-globo-su-mano-lo-senala-dedo-concepto-educacion-maestro-conquista-mundial-ecologia-ilustracion-plana-vectorial_531064-4168.jpg?w=2000"
+            alt="" width="72" height="72">
+
+        <label class="label mt-4">Nombre de usuario</label>
+        <div class="control">
+            {{ form.username }}
+        </div>
+
+        {{ form.email }}
+        {{ form.first_name }}
+        {{ form.last_name }}
+        {{ form.password1 }}
+        {{ form.password2 }}
+        <button>
+            Sign Up
+        </button>
+</form> -->
+
+{% endblock %}

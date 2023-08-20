@@ -1,0 +1,44 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/home">
+            <img src="https://images.emojiterra.com/google/android-10/512px/1f60e.png">
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="/">
+                Home
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    {% if user.is_authenticated %}
+                    <a class="button is-primary" href="/write">
+                        <strong>Write ✍️</strong>
+                    </a>
+                    <a class="button" href="/signout">
+                        <strong>Sign Out</strong>
+                    </a>
+                    {% else %}
+                    <a class="button" href="/signin">
+                        <strong>Sign In</strong>
+                    </a>
+                    <a class="button is-primary" href="/signup">
+                        <strong>Sign Up</strong>
+                    </a>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
